@@ -1,5 +1,5 @@
 # gitlab-runner
-gitlab-runner + CA import
+gitlab-runner - With automatic import from CA( registry docker and gitlab server ) 
 
 ## Usage
   0. Fork and clone
