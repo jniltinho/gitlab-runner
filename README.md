@@ -34,3 +34,16 @@ check_interval = 0
     volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache"]
     shm_size = 0
 ```
+
+## Run
+
+```
+docker run --rm -t -i -v /opt/gitlab-runner/config:/etc/gitlab-runner \
+--name gitlab-runner jniltinho/gitlab-runner register
+
+docker run -d --name gitlab-runner --restart always \
+-v /opt/gitlab-runner/config:/etc/gitlab-runner \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /root/.docker:/root/.docker:ro \
+jniltinho/gitlab-runner
+```
