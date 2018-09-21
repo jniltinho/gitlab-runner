@@ -64,7 +64,6 @@ exec_bash: ## Run bash (container)
 
 .PHONY: send_git
 send_git: ## Send to git (build, tests and send)
-
 	git pull
 	make build
 	git add :/ --all && git commit -m "$(VERSION)" --all || echo
@@ -85,7 +84,7 @@ test-all: limpa_tela ## Tests (all)
 test-docker:  ## Docker tests
 	@echo ""
 	@$(call msg_warn,"Docker basic...")
-	@sleep 1; docker run --name teste-list-docker-$(CONTEXTO) --rm -it -v /var/run/docker.sock:/var/run/docker.sock $(CONTEXTO) --version && \
+	@sleep 1; docker run --name teste-list-docker-$(CONTEXTO) --rm -it -v /var/run/docker.sock:/var/run/docker.sock $(CONTEXTO) gi --version && \
 	  echo -e "\t$(GREEN_COLOR)List containers = OK $(NO_COLOR) " || \
 		echo -e "\t$(RED_COLOR)List containers = NOK $(NO_COLOR) "
 
