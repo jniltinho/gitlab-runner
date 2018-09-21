@@ -1,5 +1,5 @@
 # gitlab-runner
-gitlab-runner - With automatic import from CA( registry docker and gitlab server ) 
+gitlab-runner - With automatic import from CA( registry docker and gitlab server )
 
 ## Usage
   0. Fork and clone
@@ -13,3 +13,24 @@ gitlab-runner - With automatic import from CA( registry docker and gitlab server
     GITLAB_PORT=443
 ```
   3. Run make... :)
+
+
+# WARNING!!!!
+```
+concurrent = 1
+check_interval = 0
+[[runners]]
+  name = "example-docker"
+  url = "https://git.acme.com/"
+  token = "XXXXXXXX"
+  executor = "docker"
+  tls-skip-verify = true
+  environment = ['GIT_SSL_NO_VERIFY=true']
+  [runners.docker]
+    tls_verify = false
+    image = "docker:latest"
+    privileged = true
+    disable_cache = false
+    volumes = ["/var/run/docker.sock:/var/run/docker.sock", "/cache"]
+    shm_size = 0
+```
