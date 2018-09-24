@@ -47,3 +47,12 @@ docker run -d --name gitlab-runner --restart always \
 -v /root/.docker:/root/.docker:ro \
 jniltinho/gitlab-runner
 ```
+
+## Links sobre o GitLab Runner
+
+```
+https://www.youtube.com/watch?v=eKA3TVB6iCs
+https://www.youtube.com/watch?v=34u4wbeEYEo&list=PLaFCDlD-mVOlnL0f9rl3jyOHNdHU--vlJ
+```
+
+
